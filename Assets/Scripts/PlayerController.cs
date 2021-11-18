@@ -23,15 +23,12 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 2f;
     private float verticalVelocity;
     
-
     [Header("Ground Settings")]
     [Tooltip("If the character is grounded or not. Not part of the CharacterController built in grounded check")]
     public bool grounded = true;
     [Tooltip("What layers the character uses as ground")]
     public LayerMask groundLayers;
     private float groundedRadius = 0.3f; // this value should be the same as the character controller radius
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -101,7 +98,6 @@ public class PlayerController : MonoBehaviour
                 // the square root of H * -2 * G = how much velocity needed to reach desired height
                 verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
                 animator.SetTrigger("Jump");
-
             }
         }
 
